@@ -16,12 +16,12 @@ class App extends Component {
         }]
       })
     }
-    
+
   }
   render() {
     return (
 
-      <div className='app'>
+      <div className='app'>  
         <div className='input-holder'>
           <input type="text"
             placeholder='Type an item and press enter'
