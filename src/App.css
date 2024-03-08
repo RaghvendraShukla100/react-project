@@ -1,22 +1,22 @@
 * {
   margin: 0;
   padding: 0;
-  background-color: rgb(62, 60, 60);
+  background-color: #35374B;
+  --item-bg-color: #78A083;
+  --input-bg-color:rgb(241, 246, 241);
+  --app-bg-color:rgba(62, 60, 60, 0);
 }
 
+
 .app {
-  background-color: rgb(62, 60, 60);
+  background-color: var(--app-bg-color);
   width: 300px;
   margin: 10em;
   padding: 10px;
   border: 1px solid white;
 }
 
-.input-holder {
 
-  /* background-color: aqua; */
-
-}
 
 #input-field {
   width: 290px;
@@ -24,14 +24,14 @@
   padding-left: 10px;
   border: 0;
   height: 40px;
-  background-color: rgb(241, 246, 241);
+  background-color: var(--input-bg-color);
 }
 
 .item {
   width: 290px;
   padding-left: 10px;
   height: 30px;
-  background-color: rgb(208, 242, 208);
+  background-color: var(--item-bg-color);
   margin-top: 5px;
   padding-top: 5px;
 }

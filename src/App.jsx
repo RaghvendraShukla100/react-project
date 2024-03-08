@@ -7,7 +7,7 @@ class App extends Component {
     item: []
   }
   add = (e) => {
-    if (e.keyCode === 13) {
+    if (e.keyCode === 13 &&  e.target.value!=="") {
       this.setState({
         item: [...this.state.item,
         {
@@ -15,6 +15,8 @@ class App extends Component {
           id: new Date().getTime()
         }]
       })
+      e.target.value="";
+      
     }
 
   }
@@ -29,7 +31,7 @@ class App extends Component {
             onKeyUp={this.add} />
         </div>
         <div className='item-holder'>
-          {/* <div className='item'>ddfghg</div> */}
+          
           {
             this.state.item.map(i => <div className='item'>{i.name}</div>)
           }
