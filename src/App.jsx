@@ -1,29 +1,45 @@
+import { Component } from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src="Octocat.png" className="App-logo" alt="logo" />
-        <p>
-          GitHub Codespaces <span className="heart">♥️</span> React
-        </p>
-        <p className="small">
-          Edit <code>src/App.jsx</code> and save to reload.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </p>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+  state = {
+    item: []
+  }
+  add = (e) => {
+    if (e.keyCode === 13) {
+      this.setState({
+        item: [...this.state.item,
+        {
+          name: e.target.value,
+          id: new Date().getTime()
+        }]
+      })
+    }
+    
+  }
+  render() {
+    return (
+
+      <div className='app'>
+        <div className='input-holder'>
+          <input type="text"
+            placeholder='Type an item and press enter'
+            id='input-field'
+            onKeyUp={this.add} />
+        </div>
+        <div className='item-holder'>
+          {/* <div className='item'>ddfghg</div> */}
+          {
+            this.state.item.map(i => <div className='item'>{i.name}</div>)
+          }
+
+
+        </div>
+      </div>
+    )
+  }
 }
+
 
 export default App;
